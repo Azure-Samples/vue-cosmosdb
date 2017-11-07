@@ -1,6 +1,6 @@
 # ignore server configuration
 */env/development.js
-*.azcli
+#*.azcli
 
 # Logs
 logs

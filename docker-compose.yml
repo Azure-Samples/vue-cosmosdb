@@ -1,8 +1,8 @@
 version: '2.1'
 
 services:
-  vue-heroes:
-    image: vue-heroes
+  vue-cosmosdb:
+    image: vue-cosmosdb
     build: .
     environment:
       NODE_ENV: production
