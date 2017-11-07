@@ -1,7 +1,3 @@
-# ignore server configuration
-*/env/development.js
-#*.azcli
-
 # Logs
 logs
 *.log
@@ -66,7 +62,7 @@ typings/
 # ignore server configuration
 env/development.js
 docker-compose.local.yml
-*.azcli
+#*.azcli
 
 # compiled output
 /dist

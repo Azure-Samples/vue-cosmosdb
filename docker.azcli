@@ -1,0 +1,11 @@
+# We can run azure cli commands with auto-complete features
+az
+
+# we can run regular bash commands
+ls
+
+# build the image and run the docker container for debugging
+npm run docker-up-debug
+
+# build the image and run the docker container for prod
+npm run docker-up
