@@ -68,6 +68,7 @@ docker-compose.local.yml
 /dist
 /tmp
 /out-tsc
+/server/www
 !/server/index.html
 
 # IDEs and editors
