@@ -4,7 +4,7 @@
       <button @click="getHeroes">Refresh</button>
       <button @click="enableAddMode" v-if="!addingHero && !selectedHero">Add</button>
     </div>
-    <ul class="heroes">
+    <ul class="heroes" v-if="heroes && heroes.length">
       <li v-for="hero in heroes" :key="hero.id"
         class="hero-container"
         :class="{selected: hero === selectedHero}">
