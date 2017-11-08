@@ -7,7 +7,7 @@
     "dev-proxy": "concurrently \"npm start\" \"npm run dev\"",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "debug": "node --inspect index.js",
+    "debug": "concurrently \"node --inspect-brk index.js\" \"npm run dev\"",
     "start": "node index.js",
     "docker-up": "docker-compose up -d --build",
     "docker-up-debug": "docker-compose -f docker-compose.debug.yml up -d --build"
