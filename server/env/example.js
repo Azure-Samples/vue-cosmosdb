@@ -2,7 +2,8 @@
 const serverPort = 3001;
 
 const cosmos = {
-  name: 'your-value-goes-here',
+  accountName: 'your-value-goes-here',
+  databaseName: 'your-value-goes-here',
   key: 'your-value-goes-here',
   port: 10255
 };
