@@ -12,7 +12,7 @@ import HeroList from './components/HeroList.vue';
 export default {
   data() {
     return {
-      title: 'Heroes App'
+      title: 'My Vue and CosmosDB Heroes App'
     };
   },
   components: {

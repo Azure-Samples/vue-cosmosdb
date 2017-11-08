@@ -9,3 +9,6 @@ npm run docker-up-debug
 
 # build the image and run the docker container for prod
 npm run docker-up
+
+# open the browser to see the running app
+open http://localhost:3001

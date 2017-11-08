@@ -26,7 +26,6 @@
   </div>
 </template>
 
-
 <script>
 import axios from 'axios';
 import HeroDetail from './HeroDetail.vue';
