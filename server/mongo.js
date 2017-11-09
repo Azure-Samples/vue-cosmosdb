@@ -7,16 +7,10 @@ mongoose.Promise = global.Promise;
 
 const envFile = './env/' + (process.env.NODE_ENV || 'development');
 const env = require(envFile);
-const dbSettings = {
-  accountName: env.cosmos.accountName,
-  key: env.cosmos.key,
-  port: env.cosmos.port,
-  databaseName: env.cosmos.databaseName
-};
 
 // Cosmos DB Connection String
 // eslint-disable-next-line max-len
-const mongoUri = `mongodb://${dbSettings.accountName}:${dbSettings.key}@${dbSettings.accountName}.documents.azure.com:${dbSettings.port}/${dbSettings.databaseName}?ssl=true`; //&replicaSet=globaldb`;
+const mongoUri = `mongodb://${env.cosmos.accountName}:${env.cosmos.key}@${env.cosmos.accountName}.documents.azure.com:${env.cosmos.port}/${env.cosmos.databaseName}?ssl=true`; //&replicaSet=globaldb`;
 
 // Local MongoDB Connection String
 // const mongoUri = `mongodb://localhost:27017/connect-heroes`;
