@@ -61,6 +61,9 @@ typings/
 
 # ignore server configuration
 env/development.js
+development.js
+**/env/development.js
+server/env/development.js
 docker-compose.local.yml
 #*.azcli
 
