@@ -11,5 +11,5 @@ const cosmos = {
 module.exports = {
   publicWeb,
   serverPort,
-  cosmos,
+  cosmos
 };
