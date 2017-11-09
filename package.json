@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev-proxy": "concurrently \"npm start\" \"npm run dev\"",
-    "dev": "webpack-dev-server --open --hot",
-    "dev-old": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": "webpack --progress --hide-modules",
-    "build-old": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "build-dev": "webpack --progress --hide-modules",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "debug": "concurrently \"node --inspect-brk index.js\" \"npm run dev\"",
     "start": "node index.js",
     "docker-up": "docker-compose up -d --build",

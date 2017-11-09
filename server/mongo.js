@@ -5,7 +5,8 @@ const mongoose = require('mongoose');
  */
 mongoose.Promise = global.Promise;
 
-const env = require('./env/' + (process.env.NODE_ENV || 'development'));
+const envFile = './env/' + (process.env.NODE_ENV || 'development');
+const env = require(envFile);
 const dbSettings = {
   accountName: env.cosmos.accountName,
   key: env.cosmos.key,

@@ -22,7 +22,7 @@
       "port": 9229,
       "address": "localhost",
       "restart": true,
-      "sourceMaps": false,
+      "sourceMaps": true,
       "localRoot": "${workspaceRoot}",
       "remoteRoot": "."
     }
