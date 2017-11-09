@@ -9,22 +9,18 @@
       "request": "launch",
       "name": "Launch via NPM",
       "runtimeExecutable": "npm",
-      "runtimeArgs": [
-        "run-script",
-        "debug"
-      ],
+      "runtimeArgs": ["run-script", "debug"],
       "port": 9229
     },
     {
-      "name": "Docker: Attach to Node",
       "type": "node",
       "request": "attach",
+      "name": "Docker: Attach to Node",
       "port": 9229,
       "address": "localhost",
-      "restart": true,
-      "sourceMaps": true,
-      "localRoot": "${workspaceRoot}",
-      "remoteRoot": "."
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/usr/src/app",
+      "protocol": "inspector"
     }
   ]
 }
