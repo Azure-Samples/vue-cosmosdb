@@ -1,3 +1,9 @@
+# We can run this locally
+npm run dev-proxy
+
+# Now let's debug directly from VS Code
+# npm run debug
+
 # We can run azure cli commands with auto-complete features
 az
 
@@ -5,10 +11,12 @@ az
 ls
 
 # build the image and run the docker container for debugging
-npm run docker-up-debug
+# npm run docker-up-debug
+# Use the docker compose command form the CMD palette
 
 # build the image and run the docker container for prod
-npm run docker-up
+# npm run docker-up
+# Use the docker compose command form the CMD palette
 
 # open the browser to see the running app
 open http://localhost:3001

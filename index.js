@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const env = require('./server/env/' + (process.env.NODE_ENV || 'development'));
+const envFile = './server/env/' + (process.env.NODE_ENV || 'development');
+const env = require(envFile);
 const routes = require('./server/routes');
 
 const app = express();
