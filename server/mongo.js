@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 const envFile = './env/' + (process.env.NODE_ENV || 'development');
+console.log(`reading env file ${envFile}`);
 const env = require(envFile);
 
 // Cosmos DB Connection String
