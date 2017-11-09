@@ -18,7 +18,9 @@ COPY . .
 FROM node:6-alpine
 WORKDIR /usr/src/app
 COPY --from=node-server /usr/src /usr/src
+# COPY --from=node-server /usr/src/node_modules /usr/src/node_modules
+# COPY --from=node-server /usr/src/app/index.js .
+# COPY --from=node-server /usr/src/app/server ./server
 COPY --from=client-app /usr/src/app/server/www ./server/www
 EXPOSE 3001
 CMD [ "node", "index.js" ]
-
