@@ -21,6 +21,10 @@ ls
 # open the browser to see the running app
 open http://localhost:3001
 
+# tag it
+docker tag vue-cosmosdb:latest papacontainerregistry.azurecr.io/johnpapa/vue-cosmosdb:latest
+# log into the container registry
 az acr login --name papacontainerregistry
-docker tag vue-cosmosdb papacontainerregistry.azurecr.io/johnpapa/vue-cosmosdb:latest
+# push it to the container registry
 docker push papacontainerregistry.azurecr.io/johnpapa/vue-cosmosdb
+
