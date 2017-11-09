@@ -6,6 +6,7 @@ services:
     build: .
     environment:
       NODE_ENV: development
+      SERVER_PORT: 3001
     ports:
       - 3001:3001
       - 9229:9229
