@@ -27,4 +27,3 @@ docker tag vue-cosmosdb:latest papacontainerregistry.azurecr.io/johnpapa/vue-cos
 az acr login --name papacontainerregistry
 # push it to the container registry
 docker push papacontainerregistry.azurecr.io/johnpapa/vue-cosmosdb
-

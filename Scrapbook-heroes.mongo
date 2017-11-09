@@ -12,5 +12,3 @@ db.heroes.insertOne({
 db.heroes.findOne({id: 100})
 
 // db.heroes.findOne({id: 777})
-
-// db.heroes.drop()
