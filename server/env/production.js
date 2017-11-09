@@ -1,6 +1,5 @@
 const serverPort = process.env.SERVER_PORT || 3001;
 const publicWeb = process.env.PUBLICWEB || './server/www';
-
 const cosmos = {
   accountName: process.env.COSMOSDB_ACCOUNT,
   databaseName: process.env.COSMOSDB_DB,
