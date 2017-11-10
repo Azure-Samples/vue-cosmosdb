@@ -126,7 +126,7 @@ button.delete-button {
     top: -3px;
   }
   .saying {
-    margin: 5px 0;
+    margin: 5px 2.3px;
   }
   .name {
     font-weight: bold;
