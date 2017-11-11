@@ -2,6 +2,8 @@
 
 A Cosmos DB, Express.js, Vue, and Node.js app
 
+> Please see the [`connect2017`](https://github.com/Azure-Samples/vue-cosmosdb/tree/connect2017?WT.mc_id=connect-c9-jopapa) branch to see the sample use in the Connect 2017 video (link coming soon)
+
 ## Features
 
 This project framework provides the following features:
