@@ -1,0 +1,6 @@
+db.heroes.find()
+db.heroes.insertOne({
+	id: 98,
+	name: 'Rocket',
+saying: 'ha ha ha'
+})

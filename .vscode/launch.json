@@ -6,8 +6,18 @@
   "configurations": [
     {
       "type": "node",
+      "request": "attach",
+      "name": "Docker: Attach to Node",
+      "port": 9229,
+      "address": "localhost",
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/usr/src/app",
+      "protocol": "inspector"
+    },
+    {
+      "type": "node",
       "request": "launch",
-      "name": "Launch via NPM",
+      "name": "Debug my vue app",
       "runtimeExecutable": "npm",
       "runtimeArgs": [
         "run-script",
@@ -16,15 +26,10 @@
       "port": 9229
     },
     {
-      "name": "Docker: Attach to Node",
       "type": "node",
-      "request": "attach",
-      "port": 9229,
-      "address": "localhost",
-      "restart": true,
-      "sourceMaps": false,
-      "localRoot": "${workspaceRoot}",
-      "remoteRoot": "."
+      "request": "launch",
+      "name": "Launch Program",
+      "program": "${workspaceFolder}/index.js"
     }
   ]
 }

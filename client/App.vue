@@ -23,8 +23,9 @@ export default {
 
 <style lang="scss">
 body,
-input[text], button {
-    color: #888;
+input[text],
+button {
+  color: #888;
   font-family: Arial;
 }
 button {
