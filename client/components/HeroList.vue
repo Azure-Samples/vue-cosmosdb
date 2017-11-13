@@ -42,6 +42,11 @@ export default {
     HeroDetail
   },
   methods: {
+    clear() {
+      this.heroes = [];
+      this.addingHero = false;
+      this.selectedHero = null;
+    },
     deleteHero(hero) {
       return axios.delete(`api/hero/${hero.id}`).then(() => {
         this.heroes = this.heroes.filter(h => h !== hero);
@@ -55,8 +60,7 @@ export default {
       this.selectedHero = null;
     },
     getHeroes() {
-      this.heroes = [];
-      this.selectedHero = null;
+      this.clear();
       return axios.get(`/api/heroes`).then(response => (this.heroes = response.data));
     },
     onSelect(hero) {
