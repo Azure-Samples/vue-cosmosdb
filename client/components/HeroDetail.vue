@@ -47,7 +47,7 @@ export default {
   },
   methods: {
     addHero() {
-      let hero = this.editingHero;
+      const hero = this.editingHero;
       this.emitRefresh('add');
     },
     clear() {
@@ -69,7 +69,7 @@ export default {
       }
     },
     updateHero() {
-      let hero = this.editingHero;
+      const hero = this.editingHero;
       this.emitRefresh('update');
     }
   }
