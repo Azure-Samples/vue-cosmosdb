@@ -19,10 +19,7 @@
       "request": "launch",
       "name": "Debug my vue app",
       "runtimeExecutable": "npm",
-      "runtimeArgs": [
-        "run-script",
-        "debug"
-      ],
+      "runtimeArgs": ["run-script", "debug"],
       "port": 9229
     },
     {

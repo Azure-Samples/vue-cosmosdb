@@ -22,7 +22,7 @@
       v-if="selectedHero || addingHero"
       :hero="selectedHero"
       @unselect="unselect"
-      @heroChanged="heroChanged"></HeroDetail>
+      @heroChanged="save"></HeroDetail>
   </div>
 </template>
 
@@ -42,14 +42,6 @@ export default {
     HeroDetail
   },
   methods: {
-    unselect() {
-      this.addingHero = false;
-      this.selectedHero = null;
-    },
-    enableAddMode() {
-      this.addingHero = true;
-      this.selectedHero = null;
-    },
     deleteHero(hero) {
       return axios.delete(`api/hero/${hero.id}`).then(() => {
         this.heroes = this.heroes.filter(h => h !== hero);
@@ -58,25 +50,33 @@ export default {
         }
       });
     },
+    enableAddMode() {
+      this.addingHero = true;
+      this.selectedHero = null;
+    },
+    getHeroes() {
+      this.heroes = [];
+      this.selectedHero = null;
+      return axios.get(`/api/heroes`).then(response => (this.heroes = response.data));
+    },
     onSelect(hero) {
       this.selectedHero = hero;
     },
-    heroChanged(arg) {
+    save(arg) {
       const hero = arg.hero;
       console.log('hero changed', hero);
       if (arg.mode === 'add') {
         axios.post(`api/hero/`, { hero }).then(() => this.heroes.push(hero));
       } else {
         axios.put(`api/hero/${hero.id}`, { hero }).then(() => {
-          let index = this.heroes.findIndex(h => hero.id === h.id);
+          const index = this.heroes.findIndex(h => hero.id === h.id);
           this.heroes.splice(index, 1, hero);
         });
       }
     },
-    getHeroes() {
-      this.heroes = [];
+    unselect() {
+      this.addingHero = false;
       this.selectedHero = null;
-      return axios.get(`/api/heroes`).then(response => (this.heroes = response.data));
     }
   }
 };
