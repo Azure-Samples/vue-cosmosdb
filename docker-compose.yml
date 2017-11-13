@@ -7,4 +7,4 @@ services:
     environment:
       NODE_ENV: production
     ports:
-      - 3001:3001
+      - 3003:3003

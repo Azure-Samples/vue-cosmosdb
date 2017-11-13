@@ -1,5 +1,5 @@
 // Replace the following with your values
-const serverPort = 3001;
+const serverPort = 3003;
 const publicWeb = './server/www';
 const cosmos = {
   accountName: 'your-value-goes-here',

@@ -43,7 +43,6 @@ export default {
   },
   methods: {
     clear() {
-      this.heroes = [];
       this.addingHero = false;
       this.selectedHero = null;
     },
@@ -52,6 +51,7 @@ export default {
         this.heroes = this.heroes.filter(h => h !== hero);
         if (this.selectedHero === hero) {
           this.selectedHero = null;
+          this.clear();
         }
       });
     },
@@ -60,6 +60,7 @@ export default {
       this.selectedHero = null;
     },
     getHeroes() {
+      this.heroes = [];
       this.clear();
       return axios.get(`/api/heroes`).then(response => (this.heroes = response.data));
     },
