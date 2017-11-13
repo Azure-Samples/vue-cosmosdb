@@ -36,7 +36,7 @@ This will build the app and run the dev server for Vue and WebPack. The Node exp
 npm run build
 
 # serve on http://localhost:8080
-# and run the api on http://localhost:3003
+# and run the api on http://localhost:3001
 npm run dev-proxy
 ```
 
