@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import heroService from '../hero.service.js';
 import HeroDetail from './HeroDetail.vue';
 
 export default {
@@ -47,7 +47,7 @@ export default {
       this.selectedHero = null;
     },
     deleteHero(hero) {
-      return axios.delete(`api/hero/${hero.id}`).then(() => {
+      return heroService.delete(hero).then(() => {
         this.heroes = this.heroes.filter(h => h !== hero);
         if (this.selectedHero === hero) {
           this.selectedHero = null;
@@ -62,7 +62,7 @@ export default {
     getHeroes() {
       this.heroes = [];
       this.clear();
-      return axios.get(`/api/heroes`).then(response => (this.heroes = response.data));
+      return heroService.getHeroes().then(response => (this.heroes = response.data));
     },
     onSelect(hero) {
       this.selectedHero = hero;
@@ -71,9 +71,9 @@ export default {
       const hero = arg.hero;
       console.log('hero changed', hero);
       if (arg.mode === 'add') {
-        axios.post(`api/hero/`, { hero }).then(() => this.heroes.push(hero));
+        heroService.addHero(hero).then(() => this.heroes.push(hero));
       } else {
-        axios.put(`api/hero/${hero.id}`, { hero }).then(() => {
+        heroService.updateHero(hero).then(() => {
           const index = this.heroes.findIndex(h => hero.id === h.id);
           this.heroes.splice(index, 1, hero);
         });

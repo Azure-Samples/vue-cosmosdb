@@ -8,10 +8,7 @@ function getHeroes(req, res) {
   docquery
     .exec()
     .then(heroes => res.status(200).json(heroes))
-    .catch(error => {
-      res.status(500).send(error);
-      return;
-    });
+    .catch(error => res.status(500).send(error));
 }
 
 function postHero(req, res) {
