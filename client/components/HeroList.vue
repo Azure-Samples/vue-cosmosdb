@@ -22,7 +22,8 @@
       v-if="selectedHero || addingHero"
       :hero="selectedHero"
       @unselect="unselect"
-      @heroChanged="save"></HeroDetail>
+      @heroChanged="save">
+    </HeroDetail>
   </div>
 </template>
 
