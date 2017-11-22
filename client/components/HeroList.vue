@@ -47,6 +47,7 @@ export default {
       this.addingHero = false;
       this.selectedHero = null;
     },
+
     deleteHero(hero) {
       return heroService.delete(hero).then(() => {
         this.heroes = this.heroes.filter(h => h !== hero);
@@ -56,18 +57,22 @@ export default {
         }
       });
     },
+
     enableAddMode() {
       this.addingHero = true;
       this.selectedHero = null;
     },
+
     getHeroes() {
       this.heroes = [];
       this.clear();
       return heroService.getHeroes().then(response => (this.heroes = response.data));
     },
+
     onSelect(hero) {
       this.selectedHero = hero;
     },
+
     save(arg) {
       const hero = arg.hero;
       console.log('hero changed', hero);
@@ -80,6 +85,7 @@ export default {
         });
       }
     },
+    
     unselect() {
       this.addingHero = false;
       this.selectedHero = null;
