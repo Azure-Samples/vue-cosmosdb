@@ -24,9 +24,7 @@
 
 <script>
 export default {
-  props: {
-    hero: { type: Object }
-  },
+  props: { hero: { type: Object } },
   data() {
     return {
       addingHero: !this.hero,
@@ -37,6 +35,11 @@ export default {
     hero() {
       this.editingHero = this.cloneIt();
     }
+  },
+  foo() {
+    return () => {
+      return 1 !== 2;
+    };
   },
   mounted() {
     if (this.addingHero && this.editingHero) {
