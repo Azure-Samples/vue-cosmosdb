@@ -25,7 +25,7 @@
 <script>
 export default {
   props: { hero: { type: Object } },
-  
+
   data() {
     return {
       addingHero: !this.hero,
