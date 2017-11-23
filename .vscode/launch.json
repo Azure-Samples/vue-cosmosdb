@@ -4,6 +4,7 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+
     {
       "type": "node",
       "request": "attach",
@@ -19,10 +20,7 @@
       "request": "launch",
       "name": "Debug my vue app",
       "runtimeExecutable": "npm",
-      "runtimeArgs": [
-        "run-script",
-        "debug"
-      ],
+      "runtimeArgs": ["run-script", "debug"],
       "port": 9229
     },
     {

@@ -13,6 +13,7 @@ This project framework provides the following features:
 * Express
 * Mongoose API
 * Connecting to MongoDB or CosmosDB
+* Building, Debugging, Deploying with Docker
 
 ## Getting Started
 
