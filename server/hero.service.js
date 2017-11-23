@@ -29,8 +29,7 @@ function putHero(req, res) {
   const updatedHero = {
     id: parseInt(req.params.id, 10),
     name: req.body.name,
-    saying: req.body.saying,
-    updatedBy: req.user.username
+    saying: req.body.saying
   };
 
   Hero.findOneAndUpdate(
