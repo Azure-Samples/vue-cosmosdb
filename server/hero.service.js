@@ -28,8 +28,8 @@ function postHero(req, res) {
 function putHero(req, res) {
   const updatedHero = {
     id: parseInt(req.params.id, 10),
-    name: req.body.name,
-    saying: req.body.saying
+    name: req.body.hero.name,
+    saying: req.body.hero.saying
   };
 
   Hero.findOneAndUpdate(
