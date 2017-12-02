@@ -22,64 +22,73 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: { hero: { type: Object } },
+<script lang="ts">
+import Vue from 'vue';
+import { Component, Emit, Prop, Watch } from 'vue-property-decorator';
+import { Hero } from '../hero';
 
-  data() {
-    return {
-      addingHero: !this.hero,
-      editingHero: this.cloneIt()
-    };
-  },
+@Component({})
+export default class HeroDetail extends Vue {
+  @Prop({default: null}) hero: Hero | null;
+  addingHero = !this.hero;
+  editingHero: Hero | null = null;
 
-  watch: {
-    hero() {
-      this.editingHero = this.cloneIt();
-    }
-  },
+  @Watch('hero') onHeroChanged(value: string, oldValue: string) {
+    this.editingHero = this.cloneIt();
+    this.setFocus();
+  }
+
+  $refs: {
+    id: HTMLElement;
+    name: HTMLElement;
+  };
+
+  addHero() {
+    const hero = <Hero>this.editingHero;
+    this.emitRefresh('add', hero);
+  }
+
+  @Emit('unselect') clear() {
+    this.editingHero = null;
+  }
+
+  cloneIt() {
+    return Object.assign({}, this.hero);
+  }
+
+  created() {
+    this.editingHero = this.cloneIt();
+  }
+
+  @Emit('heroChanged') emitRefresh(mode: string, hero: Hero) {
+    this.clear();
+  }
 
   mounted() {
+    this.setFocus();
+  }
+
+  setFocus() {
     if (this.addingHero && this.editingHero) {
       this.$refs.id.focus();
     } else {
       this.$refs.name.focus();
     }
-  },
-  methods: {
-    addHero() {
-      const hero = this.editingHero;
-      this.emitRefresh('add');
-    },
+  }
 
-    clear() {
-      this.$emit('unselect');
-      this.editingHero = null;
-    },
-
-    cloneIt() {
-      return Object.assign({}, this.hero);
-    },
-
-    emitRefresh(mode) {
-      this.$emit('heroChanged', { mode: mode, hero: this.editingHero });
-      this.clear();
-    },
-    save() {
-
-      if (this.addingHero) {
-        this.addHero();
-      } else {
-        this.updateHero();
-      }
-    },
-
-    updateHero() {
-      const hero = this.editingHero;
-      this.emitRefresh('update');
+  save() {
+    if (this.addingHero) {
+      this.addHero();
+    } else {
+      this.updateHero();
     }
   }
-};
+
+  updateHero() {
+    const hero = <Hero>this.editingHero;
+    this.emitRefresh('update', hero);
+  }
+}
 </script>
 
 <style lang="scss" scoped>
