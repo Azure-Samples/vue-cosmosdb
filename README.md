@@ -1,3 +1,10 @@
+---
+languages: []
+page_type: sample
+products:
+- azure
+---
+
 # vue-cosmosdb
 
 A Cosmos DB, Express.js, Vue, and Node.js app
